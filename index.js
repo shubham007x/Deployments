@@ -11,7 +11,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/users", userRouter);
-app.listen(process.env.PORT, async () => {
+const port=process.env.PORT;
+app.listen(port, async () => {
   try {
     await connection;
     console.log("DB connected successfully");
